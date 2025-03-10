@@ -3,9 +3,9 @@
 ![フィーチャーグラフィック](設計/for-store/図-フィーチャーグラフィック.png)
 
 <div style="display: flex;">
-  <img src="設計/for-store/device-2020-06-05-171018.png" alt="Home Screen" style="margin-right: 20px; width: 300px;">
-  <img src="設計/for-store/device-2020-06-05-171537.png" alt="Chat Screen" style="margin-right: 20px; width: 300px;">
-  <img src="設計/for-store/device-2020-06-05-171811.png" alt="Event Log" style="margin-right: 20px; width: 300px;">
+  <img src="設計/for-store/playstore1.png" alt="Home Screen" style="margin-right: 20px; width: 300px;">
+  <img src="設計/for-store/playstore2.png" alt="Chat Screen" style="margin-right: 20px; width: 300px;">
+  <img src="設計/for-store/playstore3.png" alt="Event Log" style="width: 300px;">
 </div>
 
 [Read the English README](README.md)
@@ -42,7 +42,7 @@ Wifi Messengerは、IP Messengerプロトコルを使用したAndroidデバイ�
 
 ## 連絡先
 
--   [あなたのウェブサイトURL]
+-   [https://okiislandsh.blogspot.com/]
 
 ## 免責事項
 
