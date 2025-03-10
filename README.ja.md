@@ -3,9 +3,9 @@
 ![フィーチャーグラフィック](設計/for-store/図-フィーチャーグラフィック.png)
 
 <div style="display: flex;">
-  <img src="設計/for-store/playstore1.png" alt="Home Screen" style="margin-right: 20px; width: 300px;">
-  <img src="設計/for-store/playstore2.png" alt="Chat Screen" style="margin-right: 20px; width: 300px;">
-  <img src="設計/for-store/playstore3.png" alt="Event Log" style="width: 300px;">
+  <img src="設計/for-store/playstore1.png" alt="Home Screen" style="margin-right: 20px; width: 250px;">
+  <img src="設計/for-store/playstore2.png" alt="Chat Screen" style="margin-right: 20px; width: 250px;">
+  <img src="設計/for-store/playstore3.png" alt="Event Log" style="width: 250px;">
 </div>
 
 [Read the English README](README.md)
