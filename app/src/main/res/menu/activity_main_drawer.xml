@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_archive"
+            android:icon="@drawable/ic_menu_archive"
+            android:title="@string/menu_archives"
+            app:actionViewClass="jp.okiislandsh.util.wifitoys.view.UnShowBadgeTextView" />
+    </group>
+
+    <group android:id="@+id/nav_group_other">
+        <item
+            android:id="@+id/nav_attach_file"
+            android:icon="@drawable/ic_menu_attach_file"
+            android:title="@string/menu_attach_file" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_setting"
+            android:title="@string/menu_setting" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_other"
+            android:title="@string/menu_about" />
+    </group>
+    <group android:id="@+id/nav_group_dev">
+        <item
+            android:id="@+id/nav_log"
+            android:icon="@drawable/ic_menu_log"
+            android:title="@string/menu_log" />
+        <item
+            android:id="@+id/nav_dump"
+            android:icon="@drawable/ic_menu_dump"
+            android:title="@string/menu_dump" />
+    </group>
+
+</menu>

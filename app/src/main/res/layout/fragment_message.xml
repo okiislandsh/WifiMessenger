@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <FrameLayout
+        android:id="@+id/fabNewMailFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentEnd="true" >
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNewMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_email"
+            app:backgroundTint="#808080"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="-14dp"
+            android:elevation="6dp"
+            android:includeFontPadding="false"
+            android:text="Text"
+            android:textSize="12dp"
+            android:background="@android:color/transparent"
+            android:textColor="#FFFF"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fabAttachFileFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fabNewMailFrame"
+        android:layout_marginEnd="24dp"
+        android:layout_toStartOf="@id/fabNewMailFrame">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAttachFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_file_upload"
+            app:backgroundTint="#808080" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="-14dp"
+            android:elevation="6dp"
+            android:includeFontPadding="false"
+            android:text="File"
+            android:textSize="12dp"
+            android:background="@android:color/transparent"
+            android:textColor="#FFFF"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fabAttachDirectoryFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fabNewMailFrame"
+        android:layout_marginEnd="24dp"
+        android:layout_toStartOf="@id/fabAttachFileFrame">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAttachDirectory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dir_upload"
+            app:backgroundTint="#808080" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="-14dp"
+            android:elevation="6dp"
+            android:includeFontPadding="false"
+            android:text="Directory"
+            android:textSize="12dp"
+            android:background="@android:color/transparent"
+            android:textColor="#FFFF"/>
+    </FrameLayout>
+
+</RelativeLayout>

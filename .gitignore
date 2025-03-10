@@ -1,0 +1,57 @@
+# ビルド成果物
+*.ap_
+*.aab
+*.dex
+*.class
+bin/
+gen/
+build/
+out/
+
+# ローカル設定ファイル
+local.properties
+
+# Windows固有のファイル
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS固有のファイル
+.DS_Store
+
+# Android Studio関連ファイル
+*.iml
+.idea/
+.gradle/
+.navigation/
+captures/
+output.json
+.classpath
+
+# BuildShip関連ファイル
+.project
+.settings/
+#org.eclipse.buildship.core.prefs
+
+# NDK関連ファイル
+obj/
+.externalNativeBuild/
+.cxx/
+
+# Gradle Wrapper関連ファイル
+gradle-wrapper.jar
+
+# その他の生成ファイルや一時ファイル
+*.log
+*.lock
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# 依存ライブラリのキャッシュ
+.gradle/caches/
+
+# 以下のファイルは、必要に応じて追加してください。
+# *.keystore # キーストアファイル（リリースビルド用）
+# *.jks # キーストアファイル（リリースビルド用）

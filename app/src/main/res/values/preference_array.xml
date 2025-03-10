@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="auto_download_entries">
+        <item>@string/preference_enable_auto_download_always</item>
+        <item>@string/preference_enable_auto_download_friend</item>
+        <item>@string/preference_enable_auto_download_not_start</item>
+    </string-array>
+    <string-array name="auto_download_values">
+        <item>ALWAYS</item>
+        <item>FRIEND</item>
+        <item>NOT_START</item>
+    </string-array>
+</resources>

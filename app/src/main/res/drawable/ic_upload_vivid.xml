@@ -1,0 +1,3 @@
+<bitmap android:src="@android:drawable/ic_menu_upload"
+    android:tint="#000"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

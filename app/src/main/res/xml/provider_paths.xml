@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自身(アプリケーションIDに関連付けられた)のファイルプロバイダに設定するパス一覧、ここに無いパスはプロバイダが拒否する -->
+<paths>
+    <!-- external download directory -->
+    <external-path name="Download" path="Download/" />
+    <!-- internal all -->
+    <files-path name="InternalFiles" path="." />
+</paths>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="jp.okiislandsh.util.wifitoys.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_message"
+            app:destination="@id/nav_message" />
+        <action
+            android:id="@+id/action_nav_home_to_settingUserInfoFragment"
+            app:destination="@id/nav_setting_user_info" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_setting"
+            app:destination="@id/nav_setting" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_attach_file"
+            app:destination="@id/nav_attach_file" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_log"
+            app:destination="@id/nav_log" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_dump"
+            app:destination="@id/nav_dump" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_about"
+            app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_archive"
+            app:destination="@id/nav_archive" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_message"
+        android:name="jp.okiislandsh.util.wifitoys.ui.message.MessageFragment"
+        android:label="@string/menu_messages"
+        tools:layout="@layout/fragment_message" >
+        <argument
+            android:name="sessionID"
+            app:argType="long"
+            android:defaultValue="0L"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_attach_file"
+        android:name="jp.okiislandsh.util.wifitoys.ui.attachfile.AttachFileFragment"
+        android:label="@string/menu_attach_file"
+        tools:layout="@layout/fragment_attach_file" />
+
+    <fragment
+        android:id="@+id/nav_log"
+        android:name="jp.okiislandsh.util.wifitoys.ui.log.LogFragment"
+        android:label="@string/menu_log"
+        tools:layout="@layout/fragment_log" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="jp.okiislandsh.util.wifitoys.ui.setting.SettingFragment"
+        android:label="@string/menu_setting" >
+        <action
+            android:id="@+id/action_nav_setting_to_settingForDevFragment"
+            app:destination="@id/nav_setting_dev" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_dump"
+        android:name="jp.okiislandsh.util.wifitoys.ui.dump.DumpFragment"
+        android:label="@string/menu_dump" />
+    <fragment
+        android:id="@+id/nav_archive"
+        android:name="jp.okiislandsh.util.wifitoys.ui.archive.ArchiveFragment"
+        android:label="@string/menu_archives">
+        <action
+            android:id="@+id/action_archiveFragment_to_nav_message"
+            app:destination="@id/nav_message" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_setting_dev"
+        android:name="jp.okiislandsh.util.wifitoys.ui.setting.SettingForDevFragment"
+        android:label="@string/preference_category_developer" />
+    <fragment
+        android:id="@+id/nav_setting_user_info"
+        android:name="jp.okiislandsh.util.wifitoys.ui.setting.SettingUserInfoFragment"
+        android:label="@string/preference_category_user_info" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="jp.okiislandsh.util.wifitoys.ui.about.AboutFragment"
+        android:label="@string/menu_about" />
+
+</navigation>

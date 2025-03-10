@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- androidx.preference用 https://developer.android.com/guide/topics/ui/settings.html -->
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        app:key="ipm_bool_enable_absence"
+        app:title="@string/preference_enable_absence"
+        app:summary="@string/preference_summary_enable_absence"
+        app:defaultValue="false"/>
+
+    <SwitchPreferenceCompat
+        app:key="ipm_bool_enable_msg_in_notification"
+        app:title="@string/preference_enable_msg_in_notification"
+        app:singleLineTitle="false"
+        app:defaultValue="true"/>
+
+    <SwitchPreferenceCompat
+        app:key="ipm_bool_enable_quietly_notification"
+        app:title="@string/preference_enable_quietly_notification"
+        app:defaultValue="false"/>
+
+    <PreferenceCategory
+        app:title="@string/preference_category_download"
+        app:key="category_download">
+        <ListPreference
+            app:key="ipm_enum_auto_download_mode"
+            app:title="@string/preference_enable_auto_download"
+            app:entries="@array/auto_download_entries"
+            app:entryValues="@array/auto_download_values"
+            app:defaultValue="ALWAYS"
+            app:summary="%s"/>
+        <SwitchPreferenceCompat
+            app:key="ipm_bool_enable_download_to_external"
+            app:title="@string/preference_enable_download_to_external"
+            app:summary="@string/preference_summary_enable_download_to_external"
+            app:defaultValue="true"/>
+        <jp.okiislandsh.util.wifitoys.preference.SeekBarMBytePreference
+            app:key="ipm_int_download_file_size_limit_mb"
+            app:title="@string/preference_file_size"
+            app:defaultValue="10"
+            app:minValue="1"
+            app:maxValue="6144"
+            app:power="3"
+            android:max="300"
+            app:showSeekBarValue="true" />
+        <jp.okiislandsh.library.android.preference.SeekBarIntPreference
+            app:key="ipm_int_download_file_count_limit"
+            app:title="@string/preference_file_count"
+            app:summary="@string/preference_summary_file_count"
+            app:defaultValue="100"
+            app:minValue="1"
+            app:maxValue="32768"
+            app:power="3"
+            android:max="300"
+            app:showSeekBarValue="true" />
+        <jp.okiislandsh.util.wifitoys.preference.SeekBarMBytePreference
+            app:key="ipm_int_download_total_size_limit_mb"
+            app:title="@string/preference_total_size"
+            app:summary="@string/preference_summary_total_size"
+            app:defaultValue="256"
+            app:minValue="1"
+            app:maxValue="32768"
+            app:power="3"
+            android:max="300"
+            app:showSeekBarValue="true" />
+        <jp.okiislandsh.library.android.preference.SeekBarPercentagePreference
+            app:key="ipm_float_download_disk_space_ratio_limit"
+            app:title="@string/preference_disk_space_ratio"
+            app:summary="@string/preference_summary_disk_space_ratio"
+            app:defaultValue="0.01"
+            app:minValue="0.005"
+            app:maxValue="0.3"
+            app:power="3"
+            android:max="300"
+            app:showSeekBarValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/preference_category_developer"
+        app:key="category_developer">
+        <SwitchPreferenceCompat
+            app:key="app_developer_mode"
+            app:title="@string/preference_developer_mode"
+            app:summary="@string/preference_summary_developer_mode"
+            app:defaultValue="false"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

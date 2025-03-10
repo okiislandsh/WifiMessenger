@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- androidx.preference用 https://developer.android.com/guide/topics/ui/settings.html -->
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="@string/preference_category_user_info"
+        app:key="category_user_info">
+        <!-- defaultValueを全て省略しているが、ipm_string_xxxは起動時に設定を書き込んでいるため、このフラグメントを表示するころには値が保存されているはず。 -->
+        <EditTextPreference
+            app:key="ipm_string_un"
+            app:title="@string/preference_un"
+            app:useSimpleSummaryProvider="true"
+            app:enabled="false" />
+
+        <EditTextPreference
+            app:key="ipm_string_hn"
+            app:title="@string/preference_hn"
+            app:useSimpleSummaryProvider="true"
+            app:enabled="false"  />
+
+        <EditTextPreference
+            app:key="ipm_string_nn"
+            app:title="@string/preference_nn"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="ipm_string_gn"
+            app:title="@string/preference_gn"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

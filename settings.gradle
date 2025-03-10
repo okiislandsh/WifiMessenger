@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        //maven { url "https://okiislandsh.github.io/PureJava-Library-Test/" }
+    }
+}
+
+rootProject.name = 'Wifi Messenger'
+include ':app', ':LibraryCore', ':LibraryAndroid', ':LibraryAndroidNet', ':LibraryAndroidNetService'
+project(':LibraryCore').projectDir = new File(settingsDir, '../MyLibrary/LibraryCore')
+project(':LibraryAndroid').projectDir = new File(settingsDir, '../MyLibrary/LibraryAndroid')
+project(':LibraryAndroidNet').projectDir = new File(settingsDir, '../MyLibrary/LibraryAndroidNet')
+project(':LibraryAndroidNetService').projectDir = new File(settingsDir, '../MyLibrary/LibraryAndroidNetService')

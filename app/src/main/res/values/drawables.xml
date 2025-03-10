@@ -1,0 +1,9 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_menu_home" type="drawable">@android:drawable/ic_menu_send</item>
+    <item name="ic_menu_archive" type="drawable">@android:drawable/ic_menu_recent_history</item>
+    <item name="ic_menu_attach_file" type="drawable">@android:drawable/ic_menu_save</item>
+    <item name="ic_menu_setting" type="drawable">@android:drawable/ic_menu_preferences</item>
+    <item name="ic_menu_log" type="drawable">@android:drawable/ic_menu_view</item>
+    <item name="ic_menu_other" type="drawable">@android:drawable/ic_menu_info_details</item>
+    <item name="ic_menu_dump" type="drawable">@android:drawable/ic_menu_compass</item>
+</resources>

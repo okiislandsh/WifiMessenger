@@ -1,0 +1,152 @@
+plugins {
+    id 'com.android.application'
+    id 'androidx.navigation.safeargs' //NavigationGraphの引数付きアクションを実現するために必要
+}
+
+android {
+    namespace 'jp.okiislandsh.util.wifitoys'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "jp.okiislandsh.util.wifitoys"
+        minSdk 22
+        targetSdk 35
+
+        versionCode 10 //versionNameのリビジョンも併せて変更する
+        versionName "Wifi Messenger Ver1r10" //メジャーバージョンはプロトコル変更時などに変える
+
+        buildFeatures.buildConfig = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    android.buildFeatures.viewBinding = true
+
+    buildTypes {
+        googlePlayStoreRelease {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        amazonAppStoreRelease {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix = '.amzn' //PlayStore版と干渉しないように変更
+            versionNameSuffix = '[amzn]'
+        }
+        githubRelease{
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix = '.github' //PlayStore版と干渉しないように変更
+            versionNameSuffix = ' github'
+        }
+        debug {
+            applicationIdSuffix = '.debug' //App Bundleを使用すると署名が書き換わり、デバッグ時に警告がでるため、別パッケージ名でデバッグする
+            versionNameSuffix = '[debug]'
+
+            /* リリース前リンクテスト的な設定
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' */
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    //出力されるapkファイルの名称
+    applicationVariants.configureEach { variant ->
+        variant.outputs.each { output ->
+            def outputFileName = "${variant.versionName}.apk".toString()
+            output.outputFileName = outputFileName
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':LibraryCore')
+    implementation project(':LibraryAndroid')
+    implementation project(':LibraryAndroidNet')
+    implementation project(':LibraryAndroidNetService')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def appcompat_version = "1.7.0"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    // For loading and tinting drawables on older versions of the platform
+    implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.preference:preference:1.2.1' //新しいPreference
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    //region androidx.lifecycle-*
+    def lifecycle_version = "2.8.7" //2.6.0でkotlin duplicate class error
+    def arch_version = "2.2.0"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // ViewModel utilities for Compose
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    // Lifecycle utilities for Compose
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
+
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor
+    //kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // optional - helpers for implementing LifecycleOwner in a Service
+    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
+    // optional - ReactiveStreams support for LiveData
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+
+    // optional - Test helpers for LiveData
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+    // optional - Test helpers for Lifecycle runtime
+    testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
+
+    //endregion
+
+    //プロジェクトのbuild.gradleにもnavigationのバージョン指定がある、整合させること
+    implementation "androidx.navigation:navigation-fragment:${navigation_version}"
+    implementation "androidx.navigation:navigation-ui:${navigation_version}"
+
+    //region Room DB設定
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava2 support for Room
+    //implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - RxJava3 support for Room
+    //implementation "androidx.room:room-rxjava3:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    //implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    //testImplementation "androidx.room:room-testing:$room_version"
+    // optional - Paging 3 Integration
+    //implementation "androidx.room:room-paging:2.5.0-alpha01"
+    //endregion
+
+}

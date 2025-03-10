@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Wifi Messenger[gh]</string>
+
+    <string name="nav_header_title" >@string/app_name</string>
+    <string name="nav_header_subtitle" translatable="false">Over IPMessenger Protocol</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_archives">Archives</string>
+    <string name="menu_messages">Messages</string>
+    <string name="menu_attach_file">Attach Files</string>
+    <string name="menu_setting">Setting</string>
+    <string name="menu_about">About</string>
+    <string name="menu_log">Log</string>
+    <string name="menu_dump">Dump</string>
+
+    <string name="action_grant_permissions">Grant Require Permissions</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_change">Change</string>
+    <string name="action_random_nickname">Random NickName</string>
+    <string name="action_clear_log">Clear Log?</string>
+    <string name="action_clear_messages">Clear message logs</string>
+    <string name="action_clear_all_messages">Clear all message logs</string>
+
+    <string name="action_reply">Reply</string>
+    <string name="action_share">Share</string>
+
+    <string name="button_send_msg">Send</string>
+
+    <string name="msg_send">Send to…</string>
+    <string name="msg_refresh">Refresh…</string>
+    <string name="msg_connecting_service">Connecting Service…</string>
+    <string name="msg_no_available_network">No Found Available Network. Please connect to Wifi, Tethering and other.</string>
+    <string name="msg_service_normal">Service working normally</string>
+    <string name="msg_service_no_connection">No Connection</string>
+    <string name="msg_service_waiting_receive">Waiting to receive</string>
+    <string name="msg_service_does_not_exist_or">Service does not exist or is not connected.</string>
+    <string name="msg_reverse_friend">Reverse state of friend?</string>
+    <string name="msg_clear_blacklist">Clear state of BLACK-LIST?</string>
+    <string name="msg_want_to_send_file">Want to send the file?</string>
+    <string name="msg_want_to_send_directory">Want to send the directory?</string>
+    <string name="msg_want_to_start_download">Want to start the download?</string>
+
+    <string name="label_nick_name">Nick Name</string>
+    <string name="label_group_name">Group Name</string>
+    <string name="label_ip">IP Address</string>
+    <string name="label_send_file">Send the file</string>
+    <string name="label_send_directory">Send the directory</string>
+
+
+    <string name="preference_enable_absence">Enable state of absence</string>
+    <string name="preference_summary_enable_absence">Use state of "your device lock".</string>
+    <string name="preference_enable_msg_in_notification">Message in notification</string>
+    <string name="preference_enable_quietly_notification">Enable quietly notification</string>
+
+    <string name="preference_category_download">Attach File Setting ( for each attach )</string>
+    <string name="preference_enable_auto_download">Enable start a automatically</string>
+    <string name="preference_enable_auto_download_always">Always download automatically</string>
+    <string name="preference_enable_auto_download_friend">Download automatically from friends</string>
+    <string name="preference_enable_auto_download_not_start">Don\'t download automatically</string>
+    <string name="preference_enable_download_to_external">Save to "Download" Directory</string>
+    <string name="preference_summary_enable_download_to_external">Save to Download Directory. Require write permission.</string>
+    <string name="preference_file_size">Limiting a file size</string>
+    <string name="preference_file_count">Limiting the count of files</string>
+    <string name="preference_summary_file_count">Limiting the count of files and child directories when downloading a directory.</string>
+    <string name="preference_total_size">Limiting the total size</string>
+    <string name="preference_summary_total_size">Cumulative Byte restricted when a file or a directory downloads.</string>
+    <string name="preference_disk_space_ratio">Limiting free storage ratios</string>
+    <string name="preference_summary_disk_space_ratio">If free storage ratios is less than or equal to this value, the download is forcibly aborted.</string>
+
+    <string name="preference_category_port">Port Setting ( No change recommended )</string>
+    <string name="preference_main_port">Main Port</string>
+    <string name="preference_summary_main_port">IP Messenger Standard Port Number 2425 If you change it is better to use 1024～65535.</string>
+    <string name="preference_sub_port">Sub Port</string>
+    <string name="preference_summary_sub_port">If you will multiple port, it is enabled if you specify a number that is different from the "Main Port".\nIf you want to revert to the initial value, delete the input and tap "OK".</string>
+    <string name="preference_sub_port2">Secondary Sub Port</string>
+
+    <string name="preference_category_enable_releasefiles">IPMSG_RELEASEFILES ( No change required. Must Be \"ON\" )</string>
+    <string name="preference_enable_releasefiles">ENABLE IPMSG_RELEASEFILES PER ALL ATTACHED FILES</string>
+    <string name="preference_summary_enable_releasefiles">ON: Send IPMSG_RELEASEFILES after downloading all attached files. *The official implementation is \"ON\".\nOFF: Send IPMSG_RELEASEFILES per FileID</string>
+
+    <string name="preference_category_user_info">User Info Setting</string>
+    <string name="preference_un">Publicly User Name ( Can\'t change )</string>
+    <string name="preference_hn">Publicly Host Name ( Can\'t change )</string>
+    <string name="preference_nn">Publicly Nick Name ( Don\'t set Personal-Info )</string>
+    <string name="preference_gn">Publicly Group Name ( Don\'t set Personal-Info )</string>
+
+    <string name="preference_category_developer" translatable="false">For Developer and Power-User</string>
+    <string name="preference_developer_mode">Developer Mode</string>
+    <string name="preference_summary_developer_mode">Enable Log menu, Dump menu, and more.</string>
+    <string name="service_is_not_running">Unavailable</string>
+    <string name="service_is_running">Service is running.</string>
+    <string name="start_service">▶Start</string>
+    <string name="stop_service">■Stop</string>
+    <string name="your_name" translatable="false">Your name</string>
+    <string name="action_get_version_info" translatable="false">GET VERSION INFO</string>
+    <string name="udp_available">UDP Available</string>
+    <string name="udp_unavailable">Unavailable</string>
+    <string name="port">Port</string>
+</resources>
