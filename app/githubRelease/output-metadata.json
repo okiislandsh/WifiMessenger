@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 10,
-      "versionName": "Wifi Messenger Ver1r10 github",
-      "outputFile": "Wifi Messenger Ver1r10 github.apk"
+      "versionCode": 11,
+      "versionName": "Wifi Messenger Ver1r11 github",
+      "outputFile": "Wifi Messenger Ver1r11 github.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/Wifi Messenger Ver1r10 github.dm"
+        "baselineProfiles/1/Wifi Messenger Ver1r11 github.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/Wifi Messenger Ver1r10 github.dm"
+        "baselineProfiles/0/Wifi Messenger Ver1r11 github.dm"
       ]
     }
   ],

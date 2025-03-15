@@ -12,8 +12,8 @@ android {
         minSdk 22
         targetSdk 35
 
-        versionCode 10 //versionNameのリビジョンも併せて変更する
-        versionName "Wifi Messenger Ver1r10" //メジャーバージョンはプロトコル変更時などに変える
+        versionCode 11 //versionNameのリビジョンも併せて変更する
+        versionName "Wifi Messenger Ver1r11" //メジャーバージョンはプロトコル変更時などに変える
 
         buildFeatures.buildConfig = true
 

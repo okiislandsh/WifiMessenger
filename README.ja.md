@@ -25,7 +25,7 @@ Wifi Messengerは、IP Messengerプロトコルを使用したAndroidデバイ�
 
 ## インストール
 
-1. [`Wifi Messenger Ver1r10 github.apk`](Wifi%20Messenger%20Ver1r10%20github.apk)をダウンロードします。
+1. [`Wifi Messenger Ver1r11 github.apk`](Wifi%20Messenger%20Ver1r11%20github.apk)をダウンロードします。
 2.  ダウンロードしたAPKファイルをAndroidデバイスにコピーします。
 3.  Androidデバイス上でAPKファイルを開き、インストールを実行します。
     -   デバイスの設定で不明なアプリのインストールを許可する必要がある場合があります。

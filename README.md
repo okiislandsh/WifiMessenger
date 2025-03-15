@@ -25,7 +25,7 @@ Wifi Messenger is a messaging application for Android devices that uses the IP M
 
 ## Installation
 
-1. Download the [`Wifi Messenger Ver1r10 github.apk`](Wifi%20Messenger%20Ver1r10%20github.apk).
+1. Download the [`Wifi Messenger Ver1r11 github.apk`](Wifi%20Messenger%20Ver1r11%20github.apk).
 2.  Copy the downloaded APK file to your Android device.
 3.  Open the APK file on your Android device and perform the installation.
     -   You may need to allow the installation of apps from unknown sources in your device's settings.

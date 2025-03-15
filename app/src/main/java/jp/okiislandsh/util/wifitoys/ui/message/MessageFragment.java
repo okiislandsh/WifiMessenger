@@ -49,6 +49,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -636,50 +637,60 @@ public class MessageFragment extends AbsDestinyFragmentWithIPMService implements
 
                 //パーミッションを永続化する Android8以降でこれが無いとUriを開く際にSecurityExceptionが発生する
                 //リクエストにIntent.FLAG_GRANT_PERSISTABLE_URI_PERMISSIONフラグが必要
+                //ついでに、リストに含まれるnullを除去
                 final @NonNull ContentResolver cr = requireContext().getContentResolver();
-                for (@Nullable Uri uri : uriList) {
-                    if(uri!=null) cr.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                for (Iterator<Uri> iterator = uriList.iterator(); iterator.hasNext(); ) {
+                    final @Nullable Uri uri = iterator.next();
+                    if(uri==null){
+                        Log.d("Null reference found in attachment."); //複数選択するとなぜかnullが1個含まれる。
+                        iterator.remove();
+                        continue;
+                    }
+                    cr.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 }
 
                 //一応Emptyチェック
-                if(!uriList.isEmpty()) { //Uriがあるなら
-
-                    //確認用メッセージ
-                    final @NonNull StringBuilder buf = new StringBuilder();
-                    for(@NonNull Uri uri: uriList){
-                        final @Nullable MediaUtil.MediaDataSet meta = MediaUtil.getMediaDataSet(requireContext().getContentResolver(), uri);
-                        if (meta == null) {
-                            Log.d("File Not Found. uri = "+ uri);
-                        }else{
-                            if(0<buf.length()) buf.append(BR);
-                            buf.append(meta.displayName)
-                                    .append("(")
-                                    .append(Formatter.formatFileSize(requireContext(), meta.size))
-                                    .append(")");
-                        }
-                    }
-                    final @NonNull String dialogMessage = buf.toString();
-
-                    //ダイアログで送信してもいいか確認
-                    new AlertDialog.Builder(requireContext())
-                            .setTitle(R.string.msg_want_to_send_file)
-                            .setMessage(dialogMessage)
-                            .setPositiveButton(R.string.label_send_file, (dialog, which) -> {
-                                requireReceiveService(receiveService->{
-                                    try {
-                                        if (receiveService.postIPMMessage(address, getString(R.string.label_send_file), uriList)) { //成功
-                                            showToastS(MyUtil.substring(dialogMessage, 100) + BR + getString(R.string.msg_send));
-                                        } else { //失敗
-                                            showToastS(isJa("送信に失敗。多分オフライン。", "Error. May be Offline."));
-                                        }
-                                    } catch (Exception e) {
-                                        showToastS("Error", e);
-                                    }
-                                });
-                            })
-                            .setNegativeButton(android.R.string.cancel, null)
-                            .show();
+                if(uriList.isEmpty()){
+                    showToastL("File list is empty.");
+                    return;
                 }
+
+                //確認用メッセージ
+                final @NonNull StringBuilder buf = new StringBuilder();
+                for(@NonNull Uri uri: uriList){
+                    final @Nullable MediaUtil.MediaDataSet meta = MediaUtil.getMediaDataSet(requireContext().getContentResolver(), uri);
+                    if (meta == null) {
+                        showToastS("File Not Found. uri = "+ uri);
+                        continue;
+                    }
+                    if(0<buf.length()) buf.append(BR);
+                    buf.append(meta.displayName)
+                            .append("(")
+                            .append(Formatter.formatFileSize(requireContext(), meta.size))
+                            .append(")");
+                }
+                final @NonNull String dialogMessage = buf.toString();
+
+                //ダイアログで送信してもいいか確認
+                new AlertDialog.Builder(requireContext())
+                        .setTitle(R.string.msg_want_to_send_file)
+                        .setMessage(dialogMessage)
+                        .setPositiveButton(R.string.label_send_file, (dialog, which) -> {
+                            requireReceiveService(receiveService->{
+                                try {
+                                    if (receiveService.postIPMMessage(address, getString(R.string.label_send_file), uriList)) { //成功
+                                        showToastS(MyUtil.substring(dialogMessage, 100) + BR + getString(R.string.msg_send));
+                                    } else { //失敗
+                                        showToastS(isJa("送信に失敗。多分オフライン。", "Error. May be Offline."));
+                                    }
+                                } catch (Exception e) {
+                                    showToastS("Error", e);
+                                }
+                            });
+                        })
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .show();
+
             }
     );
 
